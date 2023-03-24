@@ -20,7 +20,7 @@ I love cinema, photography, travel, architectural design and all types of plants
 
 #### Project
 
-<a href="https://github.com/mattiaginoble/mattiaginoble">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=mattiaginbole&repo=mattiaginoble" />
+<a href="https://github.com/mattiaginoble/mattiaginoble.github.io">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=mattiaginoble&repo=mattiaginoble.github.io&theme=buefy" />
 </a>
 
