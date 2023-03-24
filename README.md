@@ -15,12 +15,4 @@ I love cinema, photography, travel, architectural design and all types of plants
 
 ## GitHub Stats
 
-| <a href="https://github.com/mattiaginoble/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=mattiaginoble&show_icons=true&include_all_commits=true&theme=buefy&hide_border=true" alt="mattiaginoble's github stats" /></a> | <a href="https://github.com/mattiaginoble/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mattiaginoble&layout=compact&theme=buefy&hide_border=true" /></a> |
-| ------------- | ------------- |
-
-#### Project
-
-<a href="https://github.com/anuraghazra/anuraghazra.github.io">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=anuraghazra.github.io&theme=buefy" />
-</a>
-
+<a href="https://github.com/mattiaginoble/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=mattiaginoble&show_icons=true&include_all_commits=true&theme=buefy&hide_border=true" alt="mattiaginoble's github stats" /></a> | <a href="https://github.com/mattiaginoble/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mattiaginoble&layout=compact&theme=buefy&hide_border=true" /></a>
