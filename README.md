@@ -5,7 +5,7 @@
 ![](https://img.shields.io/static/v1?label=TypeScript&message=%E2%9D%A4&color=3078c6)
 ![](https://img.shields.io/static/v1?label=React&message=%E2%9D%A4&color=61d8f9)
 
-##About me
+## About me
 I am a frontend developer, focused on creating beautiful UIs.
 I also really enjoy working as web designer and in my spare time I work on various design projects (UI/UX design).
 In the past I've worked to many projects for university and contributed to others, mainly React and React Native.
