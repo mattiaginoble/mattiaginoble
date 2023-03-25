@@ -1,363 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mattiaginoble</title>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
+body {
+  margin: 0;
+  font-family: Outfit;
+  font-size: 34px;
+}
 
-    <style>
-      * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-      }
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
 
-      body {
-        line-height: 27.2px;
-        color: #7f8c8d;
-        font-size: 16px;
-        margin: 0;
-        overflow-wrap: break-word;
-      }
+.content {
+position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
 
-      html {
-        font-family: "Roboto", sans-serif;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-      }
+  color: white;
 
-      h2 {
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 1.6px;
-        margin: 32px 0 19px;
-        color: white;
-        text-align: center;
-      }
-
-      h3 {
-        color: white;
-      }
-
-      img {
-        border: 0;
-        max-width: 100%;
-        height: auto;
-      }
-
-      code {
-        font-family: monospace;
-      }
-
-      a:link {
-        color: white;
-        text-decoration: none;
-      }
-
-      a:visited {
-        color: white;
-        text-decoration: none;
-      }
-
-      a:hover {
-        color: white;
-        text-decoration: none;
-      }
-
-      a:active {
-        color: white;
-        text-decoration: none;
-      }
-
-      /*HEADER*/
-      .header-layout {
-        background: black;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-        padding: 20px;
-        width: 100%;
-        position: fixed;
-        z-index: 3;
-      }
-
-      .header-text {
-        padding: 8px 16px;
-        text-transform: uppercase;
-        display: block;
-      }
-
-      /*HOME*/
-      .home {
-        background: black;
-        width: 100%;
-        height: 88%;
-        position: fixed;
-      }
-
-      .home-layout {
-        width: 50%;
-        height: 50%;
-        margin: auto;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      .profile-img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 50%;
-        position: relative;
-        bottom: 100px;
-      }
-
-      .home-title {
-        font-size: 300%;
-        color: white;
-        padding: 16px 25.6px;
-        font-weight: 100;
-        border-radius: 5px;
-        line-height: 16px;
-        position: relative;
-        bottom: 100px;
-      }
-
-      .home-text {
-        color: white;
-        letter-spacing: 0.8px;
-        opacity: 0.8;
-        position: relative;
-        bottom: 100px;
-      }
-
-      .home-mail {
-        letter-spacing: 0.8px;
-        position: relative;
-        bottom: 80px;
-      }
-
-      /*SECTION*/
-      .section {
-        background: #141414;
-        min-height: 12%;
-        position: absolute;
-        top: 87%;
-        width: 100%;
-        z-index: 2;
-      }
-
-      .arrow {
-    margin-top:auto;
-      }
-      #svgMain {margin-left:auto; margin-right:auto; display:block;}
+}
 
 
-      .mydiv {
-        padding: 40px 40px 96px;
-      }
+</style>
+</head>
+<body>
 
-      .section-layout {
-        display: inline-block;
-        zoom: 1;
-        letter-spacing: normal;
-        vertical-align: top;
-        width: 25%;
-        padding: 16px;
-      }
+<video autoplay muted loop id="myVideo">
+  <source src="https://assets.mixkit.co/videos/preview/mixkit-view-above-the-clouds-that-cover-a-large-forest-39713-large.mp4">
+  Your browser does not support HTML5 video.
+</video>
 
-      /*FOOTER*/
-      footer {
-        background: #666666;
-        color: white;
-        width: 100%;
-        text-align: center;
-        padding: 16px;
-      }
+<div class="content">
+  <h1>Coming Soon</h1>
+  
+</div>
 
-      /*MEDIA QUERIES */
-
-      @media (max-width: 870px) {
-        body {
-          font-size: 14px;
-        }
-
-        .heading-layout {
-          text-align: center;
-        }
-
-        .home-layout {
-          width: 80%;
-        }
-
-        .home-title {
-          font-size: 20px;
-        }
-
-        .profile-img {
-          max-width: 50%;
-        }
-
-        .section-layout {
-          width: 100%;
-        }
-      }
-
-      /*MQ-LANDSCAPE*/
-      @media (max-height: 730px) {
-        body {
-          font-size: 14px;
-        }
-
-        .home-layout {
-          width: 80%;
-        }
-
-        .home-title {
-          position: relative;
-          bottom: 80px;
-          font-size: 20px;
-        }
-
-        .home-text {
-          position: relative;
-          bottom: 80px;
-        }
-
-        .home-mail {
-          position: relative;
-          bottom: 80px;
-        }
-
-        .header {
-          display: none;
-        }
-
-        .profile-img {
-          display: none;
-        }
-
-        .section-layout {
-          width: 100%;
-        }
-      }
-    </style>
-
-    <script></script>
-  </head>
-
-  <body>
-    <div class="header">
-      <div class="header-layout">
-        <a class="header-text" href="https://github.com/mattiaginoble"
-          >mattia.ginoble</a
-        >
-      </div>
-    </div>
-
-    <div class="home">
-      <div class="home-layout">
-        <img
-          alt="Mattia Ginoble"
-          class="profile-img"
-             src="https://avatars.githubusercontent.com/u/59367689?s=400&u=b386b3b94cf02b879adb66679b01f7d8b225277b&v=4"
-          width="250px"
-          height="250px"
-        />
-        <h1 class="home-title">Mattia Ginoble</h1>
-        <p class="home-text">Frontend Developer, UI/UX Designer</p>
-        <p class="home-mail">
-          <a href="mailto:mattia.ginoble@gmail.com">mattia.ginoble@gmail.com</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="mydiv">
-          <div class="arrow">
-          <svg
-          id="svgMain" align="center"
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            fill="white"
-            class="bi bi-arrow-down"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-            />
-          </svg>
-        </div>
-
-        <div style="letter-spacing: -4.96px">
-          <div class="section-layout">
-            <h3>About me</h3>
-            <p>
-              I am a frontend developer, focused on creating beautiful UIs. I
-              also really enjoy working as web designer and in my spare time I
-              work on various design projects (UI/UX design). In the past I've
-              worked to many projects for university and contributed to others,
-              mainly React and React Native. I love cinema, photography, travel,
-              architectural design and all types of plants.
-            </p>
-          </div>
-          <div class="section-layout">
-            <h3>Code and Technologies Skills</h3>
-            <code>
-              <span style="color: orange">JavaScript</span>
-              <span style="color: yellow">TypeScript</span>
-              <span style="color: green">HTML</span>
-              <span style="color: blue">CSS/SCSS</span>
-              <span style="color: violet">React</span>
-              <span style="color: red">Express</span>
-              <span style="color: pink">Material UI</span>
-              <span style="color: brown">Bootsrap</span>
-            </code>
-            <h3>Tools and Software</h3>
-            <span style="color: orange">VS Code</span>
-            <span style="color: yellow">Insomnia</span>
-            <span style="color: green">Git</span>
-            <span style="color: blue">Node.js</span>
-            <span style="color: violet">Figma</span>
-            <span style="color: red">Photoshop</span>
-            <span style="color: pink">Lightroom</span>
-            <span style="color: brown">DaVinci Resolve</span>
-          </div>
-          <div class="section-layout">
-            <h3>Project</h3>
-            <p>
-              In 2023, I started an independent project I call desAIgn.
-              <br />desAIgn creates delightful and editable UI designs from a
-              simple text description. With artificial intelligence, it enables
-              you to design faster than ever before.
-            </p>
-          </div>
-          <div class="section-layout">
-            <h3>Experience</h3>
-            <p>
-              From 2021 to 2022 I worked in a little comopany where I directly
-              collaborated with CEO and Product team to prototype and design the
-              UI and UX experience. Understanding of editorial, business and
-              user needs. Experience in enterprise management software. Design
-              experience for responsive web platforms. Understanding of layout,
-              typography, and visual hierarchy.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <footer>
-        Crafted with <span style="color: red">❤</span> by me © 2020
-      </footer>
-    </div>
-  </body>
+</body>
 </html>
