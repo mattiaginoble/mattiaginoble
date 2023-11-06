@@ -4,6 +4,9 @@ import clsx from "clsx";
 import { Red_Hat_Display, Red_Hat_Mono } from "next/font/google";
 import { createClient } from "@/prismicio";
 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
   variable: "--font-red-Hat-Display",
@@ -19,13 +22,13 @@ const redHatMono = Red_Hat_Mono({
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
 
-  const page = await client.getSingle("settings");
+  const settings = await client.getSingle("settings");
 
   return {
-    title: page.data.site_title || "Mattia Ginoble",
-    description: page.data.meta_description || "A blog by Mattia Ginoble",
+    title: settings.data.site_title || "Mattia Ginoble",
+    description: settings.data.meta_description || "A blog by Mattia Ginoble",
     openGraph: {
-      images: [page.data.og_image.url || ""],
+      images: [settings.data.og_image.url || ""],
     },
   };
 }
@@ -41,9 +44,9 @@ export default function RootLayout({
       className={clsx(redHatDisplay.variable, redHatMono.variable)}
     >
       <body>
-        <header>Header!</header>
+        <Header />
         {children}
-        <footer>Footer!</footer>
+        <Footer />
       </body>
     </html>
   );
