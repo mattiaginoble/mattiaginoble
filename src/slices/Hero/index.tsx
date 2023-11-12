@@ -35,14 +35,16 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid grid-cols-1 place-items-center text-start">
-        <Article field={slice.primary.link} className="mb-8 md:mb-10">
-          <PrismicNextImage
-            field={slice.primary.image}
-            className="max-w-4xl w-full mb-3"
-          />
-          {slice.primary.post_title} <div> {slice.primary.post_subtitle}</div>
-        </Article>
+      <div className="grid grid-cols-1 md:grid-cols-1 place-items-start">
+        <div className="grid grid-rows-[1fr,auto,auto] h-fit">
+          <Article field={slice.primary.link}>
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="max-w-7xl w-full mb-4"
+            />
+            {slice.primary.post_title} <div> {slice.primary.post_subtitle}</div>
+          </Article>
+        </div>
       </div>
     </Bounded>
   );

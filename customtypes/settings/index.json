@@ -50,6 +50,29 @@
             }
           }
         }
+      },
+      "social": {
+        "type": "Group",
+        "config": {
+          "label": "Social",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -7,10 +7,7 @@ export default function Article({
 }: PrismicNextLinkProps) {
   return (
     <PrismicNextLink
-      className={clsx(
-        "text-lg md:text-xl font-semibold leading-5 font-display",
-        className
-      )}
+      className={clsx("text-base font-semibold font-display", className)}
       {...restProps}
     />
   );
