@@ -18,7 +18,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "article_preview": {
+            "hero": {
               "type": "SharedSlice"
             }
           }

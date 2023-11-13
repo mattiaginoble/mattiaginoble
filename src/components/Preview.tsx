@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next";
 
-export default function Article({
+export default function Preview({
   className,
   ...restProps
 }: PrismicNextLinkProps) {

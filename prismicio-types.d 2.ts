@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = ArticlePreviewSlice;
+type HomepageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -79,67 +79,6 @@ export type HomepageDocument<Lang extends string = string> =
     "homepage",
     Lang
   >;
-
-type PageDocumentDataSlicesSlice = ArticleSlice;
-
-/**
- * Content for Page documents
- */
-interface PageDocumentData {
-  /**
-   * Slice Zone field in *Page*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
-   * Meta Description field in *Page*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: page.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Page*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Page*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: page.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
-}
-
-/**
- * Page document from Prismic
- *
- * - **API ID**: `page`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type PageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 /**
  * Item in *Settings → Navigation*
@@ -267,208 +206,79 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes =
-  | HomepageDocument
-  | PageDocument
-  | SettingsDocument;
+export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
- * Primary content in *Article → Primary*
+ * Primary content in *Hero → Primary*
  */
-export interface ArticleSliceDefaultPrimary {
+export interface HeroSliceDefaultPrimary {
   /**
-   * Image field in *Article → Primary*
+   * Image field in *Hero → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.image
+   * - **API ID Path**: hero.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 
   /**
-   * Heading Title field in *Article → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.heading_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading_title: prismic.TitleField;
-
-  /**
-   * Heading Sub field in *Article → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.heading_sub
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading_sub: prismic.TitleField;
-}
-
-/**
- * Default variation for Article Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticleSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ArticleSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Primary content in *Article → Primary*
- */
-export interface ArticleSliceArticleBodyPrimary {
-  /**
-   * Image field in *Article → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Image Medium field in *Article → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.image_medium
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image_medium: prismic.ImageField<never>;
-
-  /**
-   * Image Small field in *Article → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.image_small
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image_small: prismic.ImageField<never>;
-
-  /**
-   * Body field in *Article → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.body
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  body: prismic.RichTextField;
-}
-
-/**
- * Article - Body variation for Article Slice
- *
- * - **API ID**: `articleBody`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticleSliceArticleBody = prismic.SharedSliceVariation<
-  "articleBody",
-  Simplify<ArticleSliceArticleBodyPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Article*
- */
-type ArticleSliceVariation = ArticleSliceDefault | ArticleSliceArticleBody;
-
-/**
- * Article Shared Slice
- *
- * - **API ID**: `article`
- * - **Description**: Article
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ArticleSlice = prismic.SharedSlice<
-  "article",
-  ArticleSliceVariation
->;
-
-/**
- * Primary content in *ArticlePreview → Primary*
- */
-export interface ArticlePreviewSliceDefaultPrimary {
-  /**
-   * Image field in *ArticlePreview → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_preview.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Link Text field in *ArticlePreview → Primary*
+   * Link field in *Hero → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: article_preview.primary.link_text
+   * - **API ID Path**: hero.primary.link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link_text: prismic.LinkField;
+  link: prismic.LinkField;
 
   /**
-   * Primary Text field in *ArticlePreview → Primary*
+   * Post Title field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: article_preview.primary.primary_text
+   * - **API ID Path**: hero.primary.post_title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  primary_text: prismic.KeyTextField;
+  post_title: prismic.KeyTextField;
 
   /**
-   * Secondary Text field in *ArticlePreview → Primary*
+   * Post SubTitle field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: article_preview.primary.secondary_text
+   * - **API ID Path**: hero.primary.post_subtitle
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  secondary_text: prismic.KeyTextField;
+  post_subtitle: prismic.KeyTextField;
 }
 
 /**
- * Default variation for ArticlePreview Slice
+ * Default variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ArticlePreviewSliceDefault = prismic.SharedSliceVariation<
+export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<ArticlePreviewSliceDefaultPrimary>,
+  Simplify<HeroSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *ArticlePreview*
+ * Slice variation for *Hero*
  */
-type ArticlePreviewSliceVariation = ArticlePreviewSliceDefault;
+type HeroSliceVariation = HeroSliceDefault;
 
 /**
- * ArticlePreview Shared Slice
+ * Hero Shared Slice
  *
- * - **API ID**: `article_preview`
- * - **Description**: ArticlePreview
+ * - **API ID**: `hero`
+ * - **Description**: Hero
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ArticlePreviewSlice = prismic.SharedSlice<
-  "article_preview",
-  ArticlePreviewSliceVariation
->;
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -483,24 +293,15 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
-      PageDocument,
-      PageDocumentData,
-      PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       SettingsDocumentDataSocialItem,
       AllDocumentTypes,
-      ArticleSlice,
-      ArticleSliceDefaultPrimary,
-      ArticleSliceArticleBodyPrimary,
-      ArticleSliceVariation,
-      ArticleSliceDefault,
-      ArticleSliceArticleBody,
-      ArticlePreviewSlice,
-      ArticlePreviewSliceDefaultPrimary,
-      ArticlePreviewSliceVariation,
-      ArticlePreviewSliceDefault,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
     };
   }
 }

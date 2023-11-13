@@ -1,0 +1,101 @@
+{
+  "id": "article",
+  "type": "SharedSlice",
+  "name": "Article",
+  "description": "Article",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 1440,
+              "height": 810
+            },
+            "thumbnails": []
+          }
+        },
+        "heading_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "heading_sub": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Sub",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "articleBody",
+      "name": "Article - Body",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 1440,
+              "height": 810
+            },
+            "thumbnails": []
+          }
+        },
+        "image_medium": {
+          "type": "Image",
+          "config": {
+            "label": "Image Medium",
+            "constraint": {
+              "width": 825,
+              "height": 550
+            },
+            "thumbnails": []
+          }
+        },
+        "image_small": {
+          "type": "Image",
+          "config": {
+            "label": "Image Small",
+            "constraint": {
+              "width": 580,
+              "height": 390
+            },
+            "thumbnails": []
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

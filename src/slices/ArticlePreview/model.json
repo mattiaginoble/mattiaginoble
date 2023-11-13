@@ -1,8 +1,8 @@
 {
-  "id": "hero",
+  "id": "article_preview",
   "type": "SharedSlice",
-  "name": "Hero",
-  "description": "Hero",
+  "name": "ArticlePreview",
+  "description": "ArticlePreview",
   "variations": [
     {
       "id": "default",
@@ -23,26 +23,25 @@
             "thumbnails": []
           }
         },
-        "link": {
+        "link_text": {
           "type": "Link",
           "config": {
-            "label": "Link",
+            "label": "Link Text",
             "placeholder": "",
-            "allowTargetBlank": false,
             "select": null
           }
         },
-        "post_title": {
+        "primary_text": {
           "type": "Text",
           "config": {
-            "label": "Post Title",
+            "label": "Primary Text",
             "placeholder": ""
           }
         },
-        "post_subtitle": {
+        "secondary_text": {
           "type": "Text",
           "config": {
-            "label": "Post SubTitle",
+            "label": "Secondary Text",
             "placeholder": ""
           }
         }
