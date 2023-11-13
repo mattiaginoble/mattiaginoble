@@ -6,7 +6,6 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
-import Heading from "@/components/Heading";
 
 /**
  * Props for `Article`.
@@ -24,13 +23,37 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
         >
-          <div className="grid grid-cols-1 place-items-center text-center">
-            <PrismicNextImage
-              field={slice.primary.image}
-              className="max-w-4xl w-full"
+          <PrismicNextImage
+            field={slice.primary.image}
+            className="object-cover max-h-[40rem] max-w-7xl w-full pb-28 border-b"
+          />
+          <div className="md:grid md:grid-cols-2 gap-4 space-y-8 md:space-y-0 place-content-between mb-4 mt-4">
+            <PrismicRichText
+              field={slice.primary.heading_primary}
+              components={{
+                heading1: ({ children }) => (
+                  <h1 className="text-2xl font-semibold">{children}</h1>
+                ),
+              }}
             />
-            <PrismicRichText field={slice.primary.heading_title} />
-            <PrismicRichText field={slice.primary.heading_sub} />
+            <div className="space-y-4">
+              <PrismicRichText
+                field={slice.primary.heading_secondary}
+                components={{
+                  heading1: ({ children }) => (
+                    <h1 className="text-2xl font-semibold">{children}</h1>
+                  ),
+                }}
+              />
+              <PrismicRichText
+                field={slice.primary.heading_tertiary}
+                components={{
+                  heading1: ({ children }) => (
+                    <h1 className="text-2xl font-semibold">{children}</h1>
+                  ),
+                }}
+              />
+            </div>
           </div>
         </Bounded>
       )}
@@ -40,15 +63,32 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center">
-            <PrismicNextImage
-              field={slice.primary.image}
-              className="max-w-4xl w-full"
-            />
-            <PrismicNextImage field={slice.primary.image_medium} />
-            <PrismicNextImage field={slice.primary.image_small} />
-            <div className="grid grid-rows-[1fr,auto,auto] h-fit">
-              <PrismicRichText field={slice.primary.body} />
+          <div className="mb-8">
+            <PrismicNextImage field={slice.primary.image} />
+          </div>
+
+          <div className="md:grid md:grid-cols-2 gap-4 space-y-8 md:space-y-0 place-content-between mb-4 mt-4">
+            <div className="space-y-4 md:max-w-sm">
+              <PrismicRichText
+                field={slice.primary.body_primary}
+                components={{
+                  paragraph: ({ children }) => (
+                    <p className="text-lg font-semibold">{children}</p>
+                  ),
+                }}
+              />
+
+              <PrismicRichText
+                field={slice.primary.body_secondary}
+                components={{
+                  paragraph: ({ children }) => (
+                    <p className="text-lg font-semibold">{children}</p>
+                  ),
+                }}
+              />
+            </div>
+            <div className="mb-8">
+              <PrismicNextImage field={slice.primary.image_small} />
             </div>
           </div>
         </Bounded>

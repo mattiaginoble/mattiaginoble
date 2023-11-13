@@ -17,25 +17,34 @@
           "config": {
             "label": "Image",
             "constraint": {
-              "width": 1440,
-              "height": 810
+              "width": 1280,
+              "height": 720
             },
             "thumbnails": []
           }
         },
-        "heading_title": {
+        "heading_primary": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading Title",
+            "label": "Heading Primary",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading1"
           }
         },
-        "heading_sub": {
+        "heading_secondary": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading Sub",
+            "label": "Heading Secondary",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "heading_tertiary": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Tertiary",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading1"
@@ -57,19 +66,8 @@
           "config": {
             "label": "Image",
             "constraint": {
-              "width": 1440,
-              "height": 810
-            },
-            "thumbnails": []
-          }
-        },
-        "image_medium": {
-          "type": "Image",
-          "config": {
-            "label": "Image Medium",
-            "constraint": {
-              "width": 825,
-              "height": 550
+              "width": 1280,
+              "height": 720
             },
             "thumbnails": []
           }
@@ -79,19 +77,28 @@
           "config": {
             "label": "Image Small",
             "constraint": {
-              "width": 580,
-              "height": 390
+              "width": 1010,
+              "height": 720
             },
             "thumbnails": []
           }
         },
-        "body": {
+        "body_primary": {
           "type": "StructuredText",
           "config": {
-            "label": "Body",
+            "label": "Body Primary",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph"
+          }
+        },
+        "body_secondary": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body Secondary",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

@@ -19,18 +19,16 @@ const ArticlePreview = ({ slice }: ArticlePreviewProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid grid-cols-1 md:grid-cols-1 place-items-start">
-        <Preview field={slice.primary.link_text}>
-          <PrismicNextImage
-            field={slice.primary.image}
-            className="max-w-7xl w-full mb-4"
-          />
-          <div className="grid grid-rows-[1fr,auto,auto] h-fit">
-            {slice.primary.primary_text}{" "}
-            <div> {slice.primary.secondary_text}</div>{" "}
-          </div>
-        </Preview>
-      </div>
+      <Preview field={slice.primary.link_text}>
+        <div className="mb-4">
+          <PrismicNextImage field={slice.primary.image} />
+        </div>
+
+        <div>
+          <div> {slice.primary.primary_text}</div>
+          <div> {slice.primary.secondary_text}</div>
+        </div>
+      </Preview>
     </Bounded>
   );
 };

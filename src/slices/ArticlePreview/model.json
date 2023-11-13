@@ -16,11 +16,11 @@
           "type": "Image",
           "config": {
             "label": "Image",
+            "thumbnails": [],
             "constraint": {
-              "width": 1440,
-              "height": 810
-            },
-            "thumbnails": []
+              "height": 720,
+              "width": 1280
+            }
           }
         },
         "link_text": {
