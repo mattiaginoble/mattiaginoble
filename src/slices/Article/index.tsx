@@ -22,7 +22,7 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           <div className=" md:grid md:grid-cols-6 md:gap-4 space-y-4 mb-4">
             <PrismicNextImage
               field={slice.primary.image}
-              className="col-start-1 col-end-7 pb-32 border-b"
+              className="col-start-1 col-end-7 pb-32 border-b dark:border-[#454545]"
             />
             <PrismicRichText
               field={slice.primary.heading_title}

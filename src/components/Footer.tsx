@@ -10,7 +10,7 @@ export default async function Footer() {
 
   return (
     <Bounded as="footer">
-      <div className="flex sm:flex-row flex-col justify-between items-center gap-6 border-t pt-8">
+      <div className="flex sm:flex-row flex-col justify-between items-center gap-6 border-t dark:border-[#454545] pt-8">
         <p>
           ©{new Date().getFullYear()} {settings.data.site_title}
         </p>
