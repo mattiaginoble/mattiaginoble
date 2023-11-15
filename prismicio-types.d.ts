@@ -287,34 +287,24 @@ export interface ArticleSliceDefaultPrimary {
   image: prismic.ImageField<never>;
 
   /**
-   * Heading Primary field in *Article → Primary*
+   * Heading Title field in *Article → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.heading_primary
+   * - **API ID Path**: article.primary.heading_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_primary: prismic.TitleField;
+  heading_title: prismic.TitleField;
 
   /**
-   * Heading Secondary field in *Article → Primary*
+   * Heading side field in *Article → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.heading_secondary
+   * - **API ID Path**: article.primary.heading_side
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_secondary: prismic.TitleField;
-
-  /**
-   * Heading Tertiary field in *Article → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.heading_tertiary
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  heading_tertiary: prismic.TitleField;
+  heading_side: prismic.TitleField;
 }
 
 /**
@@ -345,34 +335,44 @@ export interface ArticleSliceArticleBodyPrimary {
   image: prismic.ImageField<never>;
 
   /**
-   * Image Small field in *Article → Primary*
+   * Image Small Right field in *Article → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.image_small
+   * - **API ID Path**: article.primary.image_small_right
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image_small: prismic.ImageField<never>;
+  image_small_right: prismic.ImageField<never>;
 
   /**
-   * Body Primary field in *Article → Primary*
+   * Body Right field in *Article → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.body_primary
+   * - **API ID Path**: article.primary.body_right
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  body_primary: prismic.RichTextField;
+  body_right: prismic.RichTextField;
 
   /**
-   * Body Secondary field in *Article → Primary*
+   * Image Small Left field in *Article → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.primary.image_small_left
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_small_left: prismic.ImageField<never>;
+
+  /**
+   * Body Left field in *Article → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.primary.body_secondary
+   * - **API ID Path**: article.primary.body_left
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  body_secondary: prismic.RichTextField;
+  body_left: prismic.RichTextField;
 }
 
 /**
@@ -389,9 +389,60 @@ export type ArticleSliceArticleBody = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Article → Primary*
+ */
+export interface ArticleSliceArticlePhotoPrimary {
+  /**
+   * Image field in *Article → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Image Small Left field in *Article → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.primary.image_small_left
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_small_left: prismic.ImageField<never>;
+
+  /**
+   * Image Small Right field in *Article → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.primary.image_small_right
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_small_right: prismic.ImageField<never>;
+}
+
+/**
+ * Article - Photo variation for Article Slice
+ *
+ * - **API ID**: `articlePhoto`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleSliceArticlePhoto = prismic.SharedSliceVariation<
+  "articlePhoto",
+  Simplify<ArticleSliceArticlePhotoPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Article*
  */
-type ArticleSliceVariation = ArticleSliceDefault | ArticleSliceArticleBody;
+type ArticleSliceVariation =
+  | ArticleSliceDefault
+  | ArticleSliceArticleBody
+  | ArticleSliceArticlePhoto;
 
 /**
  * Article Shared Slice
@@ -410,6 +461,16 @@ export type ArticleSlice = prismic.SharedSlice<
  */
 export interface ArticlePreviewSliceDefaultPrimary {
   /**
+   * Link field in *ArticlePreview → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_preview.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
    * Image field in *ArticlePreview → Primary*
    *
    * - **Field Type**: Image
@@ -420,34 +481,14 @@ export interface ArticlePreviewSliceDefaultPrimary {
   image: prismic.ImageField<never>;
 
   /**
-   * Link Text field in *ArticlePreview → Primary*
+   * Heading field in *ArticlePreview → Primary*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: article_preview.primary.link_text
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: article_preview.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  link_text: prismic.LinkField;
-
-  /**
-   * Primary Text field in *ArticlePreview → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_preview.primary.primary_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  primary_text: prismic.KeyTextField;
-
-  /**
-   * Secondary Text field in *ArticlePreview → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_preview.primary.secondary_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  secondary_text: prismic.KeyTextField;
+  heading: prismic.TitleField;
 }
 
 /**
@@ -504,9 +545,11 @@ declare module "@prismicio/client" {
       ArticleSlice,
       ArticleSliceDefaultPrimary,
       ArticleSliceArticleBodyPrimary,
+      ArticleSliceArticlePhotoPrimary,
       ArticleSliceVariation,
       ArticleSliceDefault,
       ArticleSliceArticleBody,
+      ArticleSliceArticlePhoto,
       ArticlePreviewSlice,
       ArticlePreviewSliceDefaultPrimary,
       ArticlePreviewSliceVariation,

@@ -2,7 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import clsx from "clsx";
 import { Red_Hat_Display, Red_Hat_Mono } from "next/font/google";
-import { createClient } from "@/prismicio";
+import { createClient, repositoryName } from "@/prismicio";
+import { PrismicPreview } from "@prismicio/next";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: settings.data.site_title || "Mattia Ginoble",
-    description: settings.data.meta_description || "A blog by Mattia Ginoble",
+    description: settings.data.meta_description || "A blog by Mattia Ginoble.",
     openGraph: {
       images: [settings.data.og_image.url || ""],
     },
@@ -43,10 +44,11 @@ export default function RootLayout({
       lang="en"
       className={clsx(redHatDisplay.variable, redHatMono.variable)}
     >
-      <body>
+      <body className="">
         <Header />
         {children}
         <Footer />
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );

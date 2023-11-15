@@ -1,10 +1,6 @@
 import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import {
-  JSXMapSerializer,
-  PrismicRichText,
-  SliceComponentProps,
-} from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 
 /**
@@ -23,37 +19,32 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
         >
-          <PrismicNextImage
-            field={slice.primary.image}
-            className="object-cover max-h-[40rem] max-w-7xl w-full pb-28 border-b"
-          />
-          <div className="md:grid md:grid-cols-2 gap-4 space-y-8 md:space-y-0 place-content-between mb-4 mt-4">
+          <div className=" md:grid md:grid-cols-6 md:gap-4 space-y-4 mb-4">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="col-start-1 col-end-7 pb-32 border-b"
+            />
             <PrismicRichText
-              field={slice.primary.heading_primary}
+              field={slice.primary.heading_title}
               components={{
                 heading1: ({ children }) => (
-                  <h1 className="text-2xl font-semibold">{children}</h1>
+                  <h1 className="col-start-1 col-end-3 text-2xl font-semibold leading-tight tracking-tight font-display">
+                    {children}
+                  </h1>
                 ),
               }}
             />
-            <div className="space-y-4">
-              <PrismicRichText
-                field={slice.primary.heading_secondary}
-                components={{
-                  heading1: ({ children }) => (
-                    <h1 className="text-2xl font-semibold">{children}</h1>
-                  ),
-                }}
-              />
-              <PrismicRichText
-                field={slice.primary.heading_tertiary}
-                components={{
-                  heading1: ({ children }) => (
-                    <h1 className="text-2xl font-semibold">{children}</h1>
-                  ),
-                }}
-              />
-            </div>
+
+            <PrismicRichText
+              field={slice.primary.heading_side}
+              components={{
+                heading1: ({ children }) => (
+                  <h1 className="col-start-3 col-end-7 text-xl font-semibold leading-tight tracking-tight font-display">
+                    {children}
+                  </h1>
+                ),
+              }}
+            />
           </div>
         </Bounded>
       )}
@@ -63,33 +54,62 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
         >
-          <div className="mb-8">
-            <PrismicNextImage field={slice.primary.image} />
+          <div className="md:grid md:grid-cols-6 md:gap-x-4 md:gap-y-32 space-y-10 md:space-y-0">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="col-start-1 col-end-7"
+            />
+
+            <PrismicRichText
+              field={slice.primary.body_right}
+              components={{
+                paragraph: ({ children }) => (
+                  <p className="col-start-1 col-end-3 text-lg font-semibold leading-tight tracking-tight font-display">
+                    {children}
+                  </p>
+                ),
+              }}
+            />
+            <PrismicNextImage
+              field={slice.primary.image_small_right}
+              className="col-start-3 col-end-7 col-span-2 object-cover min-h-full w-full"
+            />
+
+            <PrismicNextImage
+              field={slice.primary.image_small_left}
+              className="col-start-1 col-end-5 col-span-2 object-cover min-h-full w-full"
+            />
+            <PrismicRichText
+              field={slice.primary.body_left}
+              components={{
+                paragraph: ({ children }) => (
+                  <p className="col-start-5 col-end-7 text-lg font-semibold leading-tight tracking-tight font-display">
+                    {children}
+                  </p>
+                ),
+              }}
+            />
           </div>
-
-          <div className="md:grid md:grid-cols-2 gap-4 space-y-8 md:space-y-0 place-content-between mb-4 mt-4">
-            <div className="space-y-4 md:max-w-sm">
-              <PrismicRichText
-                field={slice.primary.body_primary}
-                components={{
-                  paragraph: ({ children }) => (
-                    <p className="text-lg font-semibold">{children}</p>
-                  ),
-                }}
-              />
-
-              <PrismicRichText
-                field={slice.primary.body_secondary}
-                components={{
-                  paragraph: ({ children }) => (
-                    <p className="text-lg font-semibold">{children}</p>
-                  ),
-                }}
-              />
-            </div>
-            <div className="mb-8">
-              <PrismicNextImage field={slice.primary.image_small} />
-            </div>
+        </Bounded>
+      )}
+      {slice.variation === "articlePhoto" && (
+        <Bounded
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+        >
+          <div className="md:grid md:grid-cols-6 md:gap-4 space-y-10 md:space-y-0">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="col-start-1 col-end-7"
+            />
+            <PrismicNextImage
+              field={slice.primary.image_small_left}
+              className="col-start-1 col-end-4 col-span-2 object-cover min-h-full w-full"
+            />
+            <PrismicNextImage
+              field={slice.primary.image_small_right}
+              className="col-start-4 col-end-7 col-span-2 object-cover min-h-full w-full"
+            />
           </div>
         </Bounded>
       )}

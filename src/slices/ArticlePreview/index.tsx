@@ -1,8 +1,7 @@
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
-import Preview from "@/components/Preview";
 
 /**
  * Props for `ArticlePreview`.
@@ -19,16 +18,24 @@ const ArticlePreview = ({ slice }: ArticlePreviewProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Preview field={slice.primary.link_text}>
-        <div className="mb-4">
-          <PrismicNextImage field={slice.primary.image} />
+      <PrismicNextLink field={slice.primary.link}>
+        <div className="grid grid-cols-6 gap-4">
+          <PrismicNextImage
+            field={slice.primary.image}
+            className="col-start-1 col-end-7"
+          />
+          <PrismicRichText
+            field={slice.primary.heading}
+            components={{
+              heading1: ({ children }) => (
+                <h1 className="col-start-1 col-end-7 sm:text-xl text-base font-semibold leading-tight tracking-tight font-display">
+                  {children}
+                </h1>
+              ),
+            }}
+          />
         </div>
-
-        <div>
-          <div> {slice.primary.primary_text}</div>
-          <div> {slice.primary.secondary_text}</div>
-        </div>
-      </Preview>
+      </PrismicNextLink>
     </Bounded>
   );
 };

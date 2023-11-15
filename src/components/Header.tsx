@@ -11,15 +11,16 @@ export default async function Header() {
   return (
     <Bounded
       as="header"
-      className="pb-0 pt-4 md:pb-0 md:pt-2 lg:pb-0 lg:pt-10 bg-white sticky top-0"
+      className="py-4 md:py-6 lg:py-8 sm:pb-0 md:pb-0 lg:pb-0 sticky top-0"
     >
-      <div className="flex gap-4 items-center justify-between flex-row border-b pb-4 text-xl font-semibold font-display">
+      <div className="flex gap-4 items-center justify-between flex-row border-b pb-4 sm:text-2xl text-lg font-semibold font-display">
         <Link href="/">{settings.data.site_title}</Link>
+
         <nav>
           <ul className="flex">
             {settings.data.navigation.map(({ link, label }) => (
               <li key={label}>
-                <PrismicNextLink field={link} className="p-2 lg:p-3">
+                <PrismicNextLink field={link} className="p-1 sm:p-3">
                   {label}
                 </PrismicNextLink>
               </li>

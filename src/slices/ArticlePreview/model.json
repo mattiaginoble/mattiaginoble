@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
@@ -23,26 +32,13 @@
             }
           }
         },
-        "link_text": {
-          "type": "Link",
+        "heading": {
+          "type": "StructuredText",
           "config": {
-            "label": "Link Text",
+            "label": "Heading",
             "placeholder": "",
-            "select": null
-          }
-        },
-        "primary_text": {
-          "type": "Text",
-          "config": {
-            "label": "Primary Text",
-            "placeholder": ""
-          }
-        },
-        "secondary_text": {
-          "type": "Text",
-          "config": {
-            "label": "Secondary Text",
-            "placeholder": ""
+            "allowTargetBlank": true,
+            "single": "heading1"
           }
         }
       },

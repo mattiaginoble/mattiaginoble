@@ -4,7 +4,6 @@
 		"variation": "default",
 		"primary": {
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
@@ -22,24 +21,28 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"link_text": {
+			"link": {
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io"
+					"url": "http://google.com"
 				}
 			},
-			"primary_text": {
-				"__TYPE__": "FieldContent",
-				"value": "fell",
-				"type": "Text"
-			},
-			"secondary_text": {
-				"__TYPE__": "FieldContent",
-				"value": "since",
-				"type": "Text"
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Serve"
+						}
+					}
+				]
 			}
 		},
 		"items": []
