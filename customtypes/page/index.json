@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "gallery": {
+              "type": "SharedSlice"
+            },
+            "article_preview": {
+              "type": "SharedSlice"
+            },
             "article": {
               "type": "SharedSlice"
             }

@@ -22,7 +22,7 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           <div className=" md:grid md:grid-cols-6 md:gap-4 space-y-4 mb-4">
             <PrismicNextImage
               field={slice.primary.image}
-              className="col-start-1 col-end-7 pb-32 border-b dark:border-[#454545]"
+              className="col-start-1 col-end-7 pb-32 border-b dark:border-[#454545] drop-shadow-xl"
             />
             <PrismicRichText
               field={slice.primary.heading_title}
@@ -57,7 +57,7 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           <div className="md:grid md:grid-cols-6 md:gap-x-4 md:gap-y-32 space-y-10 md:space-y-0">
             <PrismicNextImage
               field={slice.primary.image}
-              className="col-start-1 col-end-7"
+              className="col-start-1 col-end-7 drop-shadow-xl"
             />
 
             <PrismicRichText
@@ -72,12 +72,12 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
             />
             <PrismicNextImage
               field={slice.primary.image_small_right}
-              className="col-start-3 col-end-7 col-span-2 object-cover min-h-full w-full"
+              className="col-start-3 col-end-7 col-span-2 object-cover min-h-full w-full drop-shadow-xl"
             />
 
             <PrismicNextImage
               field={slice.primary.image_small_left}
-              className="col-start-1 col-end-5 col-span-2 object-cover min-h-full w-full"
+              className="col-start-1 col-end-5 col-span-2 object-cover min-h-full w-full drop-shadow-xl"
             />
             <PrismicRichText
               field={slice.primary.body_left}
@@ -100,15 +100,15 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
           <div className="md:grid md:grid-cols-6 md:gap-4 space-y-10 md:space-y-0">
             <PrismicNextImage
               field={slice.primary.image}
-              className="col-start-1 col-end-7"
+              className="col-start-1 col-end-7 drop-shadow-xl"
             />
             <PrismicNextImage
               field={slice.primary.image_small_left}
-              className="col-start-1 col-end-4 col-span-2 object-cover min-h-full w-full"
+              className="col-start-1 col-end-4 col-span-2 object-cover min-h-full w-full drop-shadow-xl"
             />
             <PrismicNextImage
               field={slice.primary.image_small_right}
-              className="col-start-4 col-end-7 col-span-2 object-cover min-h-full w-full"
+              className="col-start-4 col-end-7 col-span-2 object-cover min-h-full w-full drop-shadow-xl"
             />
           </div>
         </Bounded>

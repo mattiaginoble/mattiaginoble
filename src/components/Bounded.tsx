@@ -15,12 +15,13 @@ export default function Bounded({
   return (
     <Comp
       className={clsx(
-        "px-4 py-10 md:py-14 md:px-6 lg:py-16 bg-white dark:bg-[#141414] dark:text-white",
+        "px-4 py-10 md:py-14 md:px-6 lg:py-16 bg-white",
+        // dark:bg-[#141414] dark:text-white
         className
       )}
       {...restProps}
     >
-      <div className="mx-auto w-full max-w-6xl">{children}</div>
+      <div className="mx-auto w-full max-w-7xl">{children}</div>
     </Comp>
   );
 }

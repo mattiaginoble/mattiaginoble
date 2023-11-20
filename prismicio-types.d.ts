@@ -80,7 +80,10 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = ArticleSlice;
+type PageDocumentDataSlicesSlice =
+  | GallerySlice
+  | ArticlePreviewSlice
+  | ArticleSlice;
 
 /**
  * Content for Page documents
@@ -521,6 +524,51 @@ export type ArticlePreviewSlice = prismic.SharedSlice<
   ArticlePreviewSliceVariation
 >;
 
+/**
+ * Primary content in *Gallery → Items*
+ */
+export interface GallerySliceDefaultItem {
+  /**
+   * Image field in *Gallery → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Gallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<GallerySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Gallery*
+ */
+type GallerySliceVariation = GallerySliceDefault;
+
+/**
+ * Gallery Shared Slice
+ *
+ * - **API ID**: `gallery`
+ * - **Description**: Gallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySlice = prismic.SharedSlice<
+  "gallery",
+  GallerySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -554,6 +602,10 @@ declare module "@prismicio/client" {
       ArticlePreviewSliceDefaultPrimary,
       ArticlePreviewSliceVariation,
       ArticlePreviewSliceDefault,
+      GallerySlice,
+      GallerySliceDefaultItem,
+      GallerySliceVariation,
+      GallerySliceDefault,
     };
   }
 }

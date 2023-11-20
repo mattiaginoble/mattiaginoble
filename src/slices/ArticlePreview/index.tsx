@@ -22,7 +22,7 @@ const ArticlePreview = ({ slice }: ArticlePreviewProps): JSX.Element => {
         <div className="grid grid-cols-6 gap-4">
           <PrismicNextImage
             field={slice.primary.image}
-            className="col-start-1 col-end-7"
+            className="col-start-1 col-end-7 drop-shadow-xl"
           />
           <PrismicRichText
             field={slice.primary.heading}
