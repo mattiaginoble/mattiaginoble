@@ -39,7 +39,7 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
               field={slice.primary.heading_side}
               components={{
                 heading1: ({ children }) => (
-                  <h1 className="col-start-3 col-end-7 text-xl font-semibold leading-tight tracking-tight font-display">
+                  <h1 className="col-start-3 col-end-7 text-2xl font-semibold leading-tight tracking-tight font-display">
                     {children}
                   </h1>
                 ),
@@ -109,6 +109,64 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
             <PrismicNextImage
               field={slice.primary.image_small_right}
               className="col-start-4 col-end-7 col-span-2 object-cover min-h-full w-full drop-shadow-xl"
+            />
+          </div>
+        </Bounded>
+      )}
+
+      {slice.variation === "articleList" && (
+        <Bounded
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+        >
+          <div className="md:grid md:grid-cols-6 md:gap-4 border-t dark:border-[#454545] pt-32">
+            <PrismicRichText
+              field={slice.primary.heading_title}
+              components={{
+                heading1: ({ children }) => (
+                  <h1 className="col-start-1 col-end-3 text-xl font-semibold leading-tight tracking-tight font-display">
+                    {children}
+                  </h1>
+                ),
+              }}
+            />
+
+            <div className="grid grid-cols-[1fr_1fr] gap-5">
+              {slice.items.map((item) => {
+                return (
+                  <PrismicRichText
+                    key={item.heading_side.url}
+                    field={item.heading_side}
+                    components={{
+                      heading1: ({ children }) => (
+                        <h1 className="text-xl font-semibold leading-tight tracking-tight font-display ">
+                          {children}
+                        </h1>
+                      ),
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </Bounded>
+      )}
+
+      {slice.variation === "articleText" && (
+        <Bounded
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+        >
+          <div className=" md:grid md:grid-cols-6 md:gap-4 space-y-4 mb-4">
+            <PrismicRichText
+              field={slice.primary.heading_title}
+              components={{
+                heading1: ({ children }) => (
+                  <h1 className="col-start-1 col-end-7 text-2xl font-semibold leading-tight tracking-tight font-display">
+                    {children}
+                  </h1>
+                ),
+              }}
             />
           </div>
         </Bounded>

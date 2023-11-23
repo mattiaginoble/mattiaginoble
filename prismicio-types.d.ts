@@ -440,12 +440,85 @@ export type ArticleSliceArticlePhoto = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Article → Primary*
+ */
+export interface ArticleSliceArticleListPrimary {
+  /**
+   * Heading Title field in *Article → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.primary.heading_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_title: prismic.TitleField;
+}
+
+/**
+ * Primary content in *Article → Items*
+ */
+export interface ArticleSliceArticleListItem {
+  /**
+   * Heading Side field in *Article → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.items[].heading_side
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_side: prismic.TitleField;
+}
+
+/**
+ * Article - List variation for Article Slice
+ *
+ * - **API ID**: `articleList`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleSliceArticleList = prismic.SharedSliceVariation<
+  "articleList",
+  Simplify<ArticleSliceArticleListPrimary>,
+  Simplify<ArticleSliceArticleListItem>
+>;
+
+/**
+ * Primary content in *Article → Primary*
+ */
+export interface ArticleSliceArticleTextPrimary {
+  /**
+   * Heading Title field in *Article → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.primary.heading_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_title: prismic.TitleField;
+}
+
+/**
+ * Article - Text variation for Article Slice
+ *
+ * - **API ID**: `articleText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleSliceArticleText = prismic.SharedSliceVariation<
+  "articleText",
+  Simplify<ArticleSliceArticleTextPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Article*
  */
 type ArticleSliceVariation =
   | ArticleSliceDefault
   | ArticleSliceArticleBody
-  | ArticleSliceArticlePhoto;
+  | ArticleSliceArticlePhoto
+  | ArticleSliceArticleList
+  | ArticleSliceArticleText;
 
 /**
  * Article Shared Slice
@@ -594,10 +667,15 @@ declare module "@prismicio/client" {
       ArticleSliceDefaultPrimary,
       ArticleSliceArticleBodyPrimary,
       ArticleSliceArticlePhotoPrimary,
+      ArticleSliceArticleListPrimary,
+      ArticleSliceArticleListItem,
+      ArticleSliceArticleTextPrimary,
       ArticleSliceVariation,
       ArticleSliceDefault,
       ArticleSliceArticleBody,
       ArticleSliceArticlePhoto,
+      ArticleSliceArticleList,
+      ArticleSliceArticleText,
       ArticlePreviewSlice,
       ArticlePreviewSliceDefaultPrimary,
       ArticlePreviewSliceVariation,

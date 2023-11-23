@@ -149,6 +149,56 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "articleList",
+      "name": "Article - List",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        }
+      },
+      "items": {
+        "heading_side": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Side",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        }
+      }
+    },
+    {
+      "id": "articleText",
+      "name": "Article - Text",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }
