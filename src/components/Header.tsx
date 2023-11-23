@@ -11,7 +11,7 @@ export default async function Header() {
   return (
     <Bounded
       as="header"
-      className="py-4 md:py-6 lg:py-8 sm:pb-0 md:pb-0 lg:pb-0 sticky top-0 z-50"
+      className="py-4 md:py-6 lg:py-8 sm:pb-0 md:pb-0 lg:pb-0 sticky top-0 z-50 bg-white dark:bg-[#141414] dark:text-white"
     >
       <div className="flex gap-4 items-center justify-between flex-row border-b dark:border-[#454545] pb-4 sm:text-2xl text-lg font-semibold font-display">
         <Link href="/">{settings.data.site_title}</Link>

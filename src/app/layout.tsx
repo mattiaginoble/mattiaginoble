@@ -42,7 +42,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(redHatDisplay.variable, redHatMono.variable)}
+      className={clsx(
+        redHatDisplay.variable,
+        redHatMono.variable,
+        "bg-white dark:bg-[#141414] dark:text-white"
+      )}
     >
       <body className="">
         <Header />

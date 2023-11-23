@@ -29,7 +29,7 @@
             "label": "Heading Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1"
+            "single": "heading1,hyperlink"
           }
         },
         "heading_side": {
@@ -175,7 +175,7 @@
             "label": "Heading Side",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1"
+            "single": "heading1,hyperlink"
           }
         }
       }

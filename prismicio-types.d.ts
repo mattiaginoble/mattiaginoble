@@ -292,12 +292,12 @@ export interface ArticleSliceDefaultPrimary {
   /**
    * Heading Title field in *Article → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: article.primary.heading_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_title: prismic.TitleField;
+  heading_title: prismic.RichTextField;
 
   /**
    * Heading side field in *Article → Primary*
@@ -461,12 +461,12 @@ export interface ArticleSliceArticleListItem {
   /**
    * Heading Side field in *Article → Items*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: article.items[].heading_side
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading_side: prismic.TitleField;
+  heading_side: prismic.RichTextField;
 }
 
 /**
