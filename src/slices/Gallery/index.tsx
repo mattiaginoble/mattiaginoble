@@ -87,7 +87,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
           <Masonry gutter={"1rem"}>
             {slice.items.map((item, id) => (
               <motion.div
-                className="select-none"
+                className="select-none cursor-pointer"
                 key={id}
                 layoutId={id.toString()}
                 onClick={() => setSelectedItem({ id, item })}
