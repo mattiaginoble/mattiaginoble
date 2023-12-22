@@ -44,7 +44,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
           {!!selectedItem && (
             <>
               <motion.div
-                className=" fixed inset-0 bg-[#141414]/70 backdrop-blur-2xl"
+                className="fixed inset-0 bg-[#141414]/70 backdrop-blur-2xl"
                 key="backdrop"
                 onClick={handleClose}
                 variants={{

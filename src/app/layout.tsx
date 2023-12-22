@@ -7,6 +7,8 @@ import { PrismicPreview } from "@prismicio/next";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Menu from "@/components/Menu/Menu";
+import Providers from "@/components/Providers";
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
@@ -40,20 +42,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={clsx(
-        redHatDisplay.variable,
-        redHatMono.variable,
-        "bg-white dark:bg-[#141414] dark:text-white"
-      )}
-    >
-      <body className="">
-        <Header />
-        {children}
-        <Footer />
-        <PrismicPreview repositoryName={repositoryName} />
-      </body>
-    </html>
+    <Providers>
+      <html
+        lang="en"
+        className={clsx(
+          redHatDisplay.variable,
+          redHatMono.variable,
+          "bg-white dark:bg-[#141414] dark:text-white"
+        )}
+      >
+        <body>
+          <Header />
+          {children}
+          <Footer />
+          <PrismicPreview repositoryName={repositoryName} />
+          <Menu />
+        </body>
+      </html>
+    </Providers>
   );
 }
