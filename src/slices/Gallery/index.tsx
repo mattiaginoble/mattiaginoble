@@ -8,7 +8,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Link from "next/link";
 
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 
 /**
@@ -29,6 +29,10 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
   const backdropRef = useRef(null);
 
   const handleClose = useCallback(() => setSelectedItem(undefined), []);
+
+  useEffect(() => {
+    document.body.style.overflow = selectedItem ? "hidden" : "unset";
+  }, [selectedItem]);
 
   return (
     <Bounded
