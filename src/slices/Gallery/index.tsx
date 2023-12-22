@@ -32,6 +32,9 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
 
   useEffect(() => {
     document.body.style.overflow = selectedItem ? "hidden" : "unset";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [selectedItem]);
 
   return (
