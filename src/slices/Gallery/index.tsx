@@ -97,7 +97,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
                 onClick={() => setSelectedItem({ id, item })}
               >
                 <PrismicNextImage
-                  className="drag-none"
+                  className="drag-none w-full md:w-auto"
                   key={item.image.url}
                   field={item.image}
                 />
