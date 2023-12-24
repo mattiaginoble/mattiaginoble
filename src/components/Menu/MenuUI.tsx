@@ -14,7 +14,7 @@ export default function MenuUI() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center text-center justify-center bg-[#141414]/90 backdrop-blur-sm z-10">
+    <div className="fixed top-0 left-0 w-full h-full flex items-center text-center justify-center bg-white/90 dark:bg-[#141414]/90 backdrop-blur-sm z-10">
       <nav>
         <ul className="flex flex-col gap-4">
           {settings?.data.navigation.map(({ link, label }: any) => (

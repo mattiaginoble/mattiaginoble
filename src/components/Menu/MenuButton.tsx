@@ -13,6 +13,7 @@ export default function MenuButton() {
     >
       {isOpen ? (
         <svg
+          className="fill-black dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="#fff"
