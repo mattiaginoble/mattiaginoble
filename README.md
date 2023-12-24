@@ -4,10 +4,10 @@
 
 ## :hearts: About me
 
-I am a Web Designer, focused on creating beautiful UIs.
-I also really enjoy working as frontend developer and in my spare time I work on various design projects.
-In the past I've worked to many projects for university and contributed to others, mainly React and React Native.
-I love Japan, cinema, photography, travel, architectural design and all types of plants.
+UI/UX Designer, specializing in the production of Lo-fi and Hi-fi mockups and wireframes,
+with a focus on the specific needs of the target audience.
+In addition, I have a passion for designing solutions that meet the needs of both business and end users,
+while also creating synergy with developers given my expertise in software development.
 </br>
 
 [Check This Out](https://mattiaginoble.github.io/business-card/)
@@ -21,11 +21,11 @@ I love Japan, cinema, photography, travel, architectural design and all types of
 
 - 👨‍💻 All of my GitHub projects are available at [here.](https://github.com/mattiaginoble/)
 
-- ✏️ All of my Design projects are available at [here.](https://dribbble.com/mattiaginble/)
+- ✏️ All of my Design projects are available at [here.](https://dribbble.com/mattiaginoble/)
 
-- 📝 I regulary write articles on [my blog](https://mattiaginoble.com/)
+- 📝 I regulary write articles on [my blog](https://mattiaginoble.vercel.app/)
 
-- 💬 Ask me about **design, film or anime/manga.**
+- 💬 Ask me about **design, film, technology or anime .**
 
 - 📫 How to reach me **mattia.ginoble@gmail.com**
 
@@ -40,7 +40,7 @@ I love Japan, cinema, photography, travel, architectural design and all types of
 
 ## :beers: Social
 
-[![SVG Banners](https://svg-banners.vercel.app/api?type=typeWriter&text1=Check%20it%20out%20all%20my%20work%20on%20Dribble%20and%20GitHub&width=1000&height=100)](https://github.com/Akshay090/svg-banners)
+[![SVG Banners](https://svg-banners.vercel.app/api?type=typeWriter&text1=Check%20it%20out%20all%20my%20work%20on%20Dribble%20and%20GitHub&width=1000&height=100)]
 
 <div align="center">
 
@@ -52,9 +52,7 @@ I love Japan, cinema, photography, travel, architectural design and all types of
 
 </br>
 
-<a href="https://moon-svg.minung.dev">
-  <img src="https://moon-svg.minung.dev/moon.svg?theme=basic" alt="moon.svg" />
-</a>
+<img src="https://moon-svg.minung.dev/moon.svg?theme=basic" alt="moon.svg" />
  
 </div>
 
