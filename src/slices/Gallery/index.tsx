@@ -71,7 +71,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
               />
 
               <motion.div
-                className="w-fit items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none md:pointer-events-auto"
+                className="w-fit items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none md:pointer-events-auto z-50"
                 key="modal"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

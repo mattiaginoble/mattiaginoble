@@ -40,7 +40,7 @@ while also creating synergy with developers given my expertise in software devel
 
 ## :beers: Social
 
-[![SVG Banners](https://svg-banners.vercel.app/api?type=typeWriter&text1=Check%20it%20out%20all%20my%20work%20on%20Dribble%20and%20GitHub&width=1000&height=100)]
+![SVG Banners](https://svg-banners.vercel.app/api?type=typeWriter&text1=Check%20it%20out%20all%20my%20work%20on%20Dribble%20and%20GitHub&width=1000&height=100)
 
 <div align="center">
 
