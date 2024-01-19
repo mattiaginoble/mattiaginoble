@@ -17,6 +17,15 @@ export default function MenuUI() {
     <div className="fixed top-0 left-0 w-full h-full flex items-center text-left justify-center bg-white/90 dark:bg-[#141414]/90 backdrop-blur-sm z-10">
       <nav className="w-4/5">
         <ul className="flex flex-col gap-6">
+          <PrismicNextLink
+            field={{ url: "/", link_type: "Web" }}
+            onClick={() => {
+              setMenuContext((prev) => ({ ...prev, isOpen: false }));
+            }}
+            className="p-1 sm:p-3 text-5xl active:opacity-80 transition-opacity"
+          >
+            Home
+          </PrismicNextLink>
           {settings?.data.navigation.map(({ link, label }: any) => (
             <li key={label}>
               <PrismicNextLink
