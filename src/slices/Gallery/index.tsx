@@ -47,7 +47,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
           {!!selectedItem && (
             <>
               <motion.div
-                className="fixed inset-0 bg-[#141414]/70 backdrop-blur-2xl"
+                className="fixed inset-0 bg-[#141414]/70 backdrop-blur-2xl z-20"
                 key="backdrop"
                 onClick={handleClose}
                 variants={{
@@ -71,16 +71,17 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
               />
 
               <motion.div
-                className="w-fit items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none md:pointer-events-auto z-50"
+                className="w-full flex justify-center items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none md:pointer-events-auto z-50"
                 key="modal"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                onClick={handleClose}
               >
                 <motion.div layoutId={selectedItem.id.toString()}>
                   <PrismicNextImage
-                    width={500}
-                    className="drag-none"
+                    // width={1000}
+                    className="drag-none max-w-[90vw] max-h-[90vh] w-full h-auto object-contain"
                     key={selectedItem.item.image.url}
                     field={selectedItem.item.image}
                   />
