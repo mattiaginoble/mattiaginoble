@@ -6,6 +6,7 @@ export default function MenuButton() {
   const [{ isOpen }, setMenuContext] = useMenuContext();
   return (
     <button
+      className="block"
       type="button"
       onClick={() =>
         setMenuContext((prev) => ({ ...prev, isOpen: !prev.isOpen }))
