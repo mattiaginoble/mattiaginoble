@@ -15,16 +15,22 @@ export default function MenuButton() {
         <svg
           className="fill-black dark:fill-white"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="#fff"
-          width={30}
           height={30}
+          viewBox="0 -960 960 960"
+          width={30}
         >
-          <title>close</title>
-          <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
         </svg>
       ) : (
-        "Menu"
+        <svg
+          className="fill-black dark:fill-white"
+          xmlns="http://www.w3.org/2000/svg"
+          height={30}
+          viewBox="0 -960 960 960"
+          width={30}
+        >
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
       )}
     </button>
   );
