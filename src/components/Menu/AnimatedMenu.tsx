@@ -44,13 +44,13 @@ export default function AnimatedMenu({ settings }: AnimatedMenuProps) {
 
   return (
     <motion.nav
-      className="absolute inset-0 w-full z-50 block md:hidden"
+      className="fixed inset-0 w-full z-50 block md:hidden"
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom="100%"
     >
       <motion.div
-        className="absolute inset-0 w-full bg-white/90 dark:bg-[#141414]/90 backdrop-blur-sm"
+        className="fixed inset-0 w-full bg-white/90 dark:bg-[#141414]/90 backdrop-blur-sm"
         variants={sidebar}
       />
       <Navigation toggle={() => toggleOpen()} settings={settings} />

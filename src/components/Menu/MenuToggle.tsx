@@ -25,7 +25,7 @@ export default function MenuToggle({ toggle }: MenuToggleProps) {
   return (
     <button
       onClick={toggle}
-      className="flex items-center justify-center absolute top-[6px] sm:top-2 right-[15px] w-[50px] h-[50px] rounded-full"
+      className="fixed flex items-center justify-center top-[6px] sm:top-2 right-[15px] w-[50px] h-[50px] rounded-full"
     >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path

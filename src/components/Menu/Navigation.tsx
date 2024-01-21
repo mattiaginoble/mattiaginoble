@@ -37,7 +37,7 @@ type NavigationProps = {
 export default function Navigation({ settings, toggle }: NavigationProps) {
   return (
     <motion.ul
-      className="absolute p-6 top-1/3 ml-6 flex flex-col gap-6"
+      className="fixed p-6 top-1/3 ml-6 flex flex-col gap-6"
       variants={ulVariants}
     >
       <motion.li variants={liVariants}>
