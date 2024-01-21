@@ -5,3 +5,22 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
