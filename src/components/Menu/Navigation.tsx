@@ -6,9 +6,14 @@ import { ComponentProps } from "react";
 const ulVariants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    pointerEvents: "auto" as any,
   },
   closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    },
+    pointerEvents: "none" as any,
   },
 };
 
@@ -19,6 +24,7 @@ const liVariants = {
     transition: {
       y: { stiffness: 1000, velocity: -100 },
     },
+    pointerEvents: "auto" as any,
   },
   closed: {
     y: 50,
@@ -26,6 +32,7 @@ const liVariants = {
     transition: {
       y: { stiffness: 1000 },
     },
+    pointerEvents: "none" as any,
   },
 };
 
