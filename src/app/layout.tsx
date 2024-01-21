@@ -4,11 +4,10 @@ import clsx from "clsx";
 import { Red_Hat_Display, Red_Hat_Mono } from "next/font/google";
 import { createClient, repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Menu from "@/components/Menu/Menu";
 import Providers from "@/components/Providers";
+import AnimatedMenu from "@/components/Menu/AnimatedMenu";
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
@@ -36,11 +35,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const client = createClient();
+  const settings = await client.getSingle("settings");
   return (
     <Providers>
       <html
@@ -52,11 +53,11 @@ export default function RootLayout({
         )}
       >
         <body>
-          <Header />
+          <Header settings={settings} />
           {children}
-          <Footer />
+          <Footer settings={settings} />
           <PrismicPreview repositoryName={repositoryName} />
-          <Menu />
+          <AnimatedMenu settings={settings} />
         </body>
       </html>
     </Providers>

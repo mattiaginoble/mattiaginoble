@@ -3,11 +3,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "./Bounded";
 
-export default async function Footer() {
-  const client = createClient();
-
-  const settings = await client.getSingle("settings");
-
+export default async function Footer({ settings }: any) {
   return (
     <Bounded as="footer">
       <div className="flex sm:flex-row flex-col justify-between items-center gap-6 border-t dark:border-[#454545] pt-8">
@@ -16,7 +12,7 @@ export default async function Footer() {
         </p>
 
         <ul className="flex">
-          {settings.data.social.map(({ link, label }) => (
+          {settings.data.social.map(({ link, label }: any) => (
             <li key={label}>
               <PrismicNextLink field={link} className="p-3">
                 {label}
