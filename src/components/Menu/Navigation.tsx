@@ -37,10 +37,14 @@ type NavigationProps = {
 export default function Navigation({ settings, toggle }: NavigationProps) {
   return (
     <motion.ul
-      className="fixed p-6 top-1/3 ml-6 flex flex-col gap-6"
+      className="fixed p-6 top-1/3 ml-6 flex flex-col gap-6 items-start"
       variants={ulVariants}
     >
-      <motion.li variants={liVariants}>
+      <motion.li
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        variants={liVariants}
+      >
         <PrismicNextLink
           field={{ url: "/", link_type: "Web" }}
           onClick={toggle}
@@ -50,7 +54,12 @@ export default function Navigation({ settings, toggle }: NavigationProps) {
         </PrismicNextLink>
       </motion.li>
       {settings.data.navigation.map(({ link, label }) => (
-        <motion.li key={label} variants={liVariants}>
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          key={label}
+          variants={liVariants}
+        >
           <PrismicNextLink
             field={link}
             onClick={toggle}
