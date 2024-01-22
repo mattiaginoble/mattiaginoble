@@ -54,7 +54,7 @@ export default async function RootLayout({
       >
         <body>
           <Header settings={settings} />
-          {children}
+          <main>{children}</main>
           <Footer settings={settings} />
           <PrismicPreview repositoryName={repositoryName} />
           <AnimatedMenu settings={settings} />
