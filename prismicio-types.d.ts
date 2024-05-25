@@ -467,6 +467,16 @@ export interface ArticleSliceArticleListItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading_side: prismic.RichTextField;
+
+  /**
+   * Heading Date field in *Article → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.items[].heading_date
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading_date: prismic.TitleField;
 }
 
 /**
