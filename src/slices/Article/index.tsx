@@ -143,6 +143,11 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
                           {children}
                         </h1>
                       ),
+                      heading2: ({ children }) => (
+                        <h1 className="text-xl font-semibold leading-tight tracking-tight font-display text-neutral-300">
+                          {children}
+                        </h1>
+                      ),
                     }}
                   />
                 );

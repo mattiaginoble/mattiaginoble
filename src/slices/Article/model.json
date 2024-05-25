@@ -175,7 +175,7 @@
             "label": "Heading Side",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1,hyperlink,heading2"
+            "single": "heading1,heading2,hyperlink"
           }
         }
       }
