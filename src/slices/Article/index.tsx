@@ -130,22 +130,8 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
                 ),
               }}
             />
+
             <div className="grid grid-row-auto md:grid-cols-2 md:col-span-4 gap-8 md:gap-40">
-              {slice.items.map((item) => {
-                return (
-                  <PrismicRichText
-                    key={null}
-                    field={item.heading_date}
-                    components={{
-                      heading1: ({ children }) => (
-                        <h2 className="text-xl font-semibold leading-tight tracking-tight font-display text-neutral-950">
-                          {children}
-                        </h2>
-                      ),
-                    }}
-                  />
-                );
-              })}
               {slice.items.map((item) => {
                 return (
                   <PrismicRichText

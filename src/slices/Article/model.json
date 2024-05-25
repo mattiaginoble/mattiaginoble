@@ -175,16 +175,7 @@
             "label": "Heading Side",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading1,hyperlink"
-          }
-        },
-        "heading_date": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Heading Date",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading2"
+            "single": "heading1,hyperlink,heading2"
           }
         }
       }

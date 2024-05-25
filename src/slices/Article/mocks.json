@@ -263,21 +263,7 @@
 								{
 									"type": "heading1",
 									"content": {
-										"text": "Heart"
-									}
-								}
-							]
-						}
-					],
-					[
-						"heading_date",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "heading2",
-									"content": {
-										"text": "Ability"
+										"text": "Basis"
 									}
 								}
 							]
