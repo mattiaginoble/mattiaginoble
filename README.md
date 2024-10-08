@@ -46,7 +46,7 @@ while also creating synergy with developers given my expertise in software devel
 
 [![SVG Banners](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mattia-ginoble-bb4890239)
 [![SVG Banners](https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white)](https://dribbble.com/mattiaginble/)
-[![SVG Banners](https://img.shields.io/badge/iCloud_CV-%233A95E3.svg?style=for-the-badge&logo=apple&logoColor=white)](https://www.icloud.com/iclouddrive/0c8fPEgKi-rx-dB1wjKY3toHQ#CV_Mattia_Ginoble/)
+[![SVG Banners](https://img.shields.io/badge/cv-8A2BE2)](https://read.cv/mattiaginoble)
 [![SVG Banners](https://img.shields.io/badge/Apple_Music-9933CC?style=for-the-badge&logo=apple-music&logoColor=white)](https://music.apple.com/profile/mattsamune/)
 [![SVG Banners](https://dcbadge.vercel.app/api/shield/361177612623806467)](https://discordapp.com/users/361177612623806467/)
 
