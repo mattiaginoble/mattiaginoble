@@ -139,12 +139,12 @@ const Article = ({ slice }: ArticleProps): JSX.Element => {
                     field={item.heading_side}
                     components={{
                       heading1: ({ children }) => (
-                        <h1 className="text-xl font-semibold leading-tight tracking-tight font-display">
+                        <h1 className="text-xl font-semibold leading-tight tracking-tight font-display hover:underline">
                           {children}
                         </h1>
                       ),
                       heading2: ({ children }) => (
-                        <h1 className="text-xl font-semibold leading-tight tracking-tight font-display text-neutral-300">
+                        <h1 className="text-xl font-semibold leading-tight tracking-tight font-display text-neutral-300 hover:underline">
                           {children}
                         </h1>
                       ),
